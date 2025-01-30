@@ -29,7 +29,7 @@ def configurar_firefox_options() -> Options:
 def iniciar_driver() -> webdriver.Firefox:
     """Inicializa e retorna o driver do Firefox com as configurações necessárias."""
     options = configurar_firefox_options()
-    service = Service("geckodriver")
+    service = Service("/snap/bin/geckodriver") #mude caso de erro
     return webdriver.Firefox(service=service, options=options)
 
 def contar_arquivos_css(driver: webdriver.Firefox) -> int:
